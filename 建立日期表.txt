@@ -1,0 +1,13 @@
+dDate = ADDCOLUMNS (
+    CALENDARAUTO (),
+    "Year", YEAR ( [Date] ),
+    "Quartername", "Q" & QUARTER ( [Date] ),
+    "Month", FORMAT ( [Date], "mmmm" ),
+    "Month Number", MONTH ( [Date] ),
+    "Month Name", MONTH ( [Date] )&"月",
+    "Quarternumber", ROUNDUP(MONTH ( [Date] )/3,0),
+    "Yearquartersort", YEAR ( [Date] )*10+ROUNDUP (MONTH ([Date])/3,0),
+    "Year-Quarter", YEAR ( [Date] )&"-"&"Q" & QUARTER ( [Date] ),
+    "Year-Month",YEAR ( [Date] ) & "-"& FORMAT ( [Date], "mmm" ),
+    "Yearmonthsort", YEAR ( [Date] )*100+MONTH ( [Date] )
+)
